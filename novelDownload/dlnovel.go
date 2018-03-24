@@ -32,15 +32,17 @@ func fetchlink(url string) ([]string, string) {
 		fmt.Println(err)
 		return nil, "nil"
 	}
+	fmt.Println("download "+url+" succeed")
 	html := soup.HTMLParse(resq)
 	bookName := html.Find("div", "id", "info").Find("h1").Text()
 	links := html.Find("div", "id", "list").FindAll("a")
 	for _, link := range links {
 		txt = strings.Split(link.Attrs()["href"], "/")
-		if len(txt) > 1 {
+		if len(txt) > 0 {
 			alllink = append(alllink, strings.Trim(txt[len(txt)-1], ".html"))
 		}
 	}
+	fmt.Println(bookName)
 	return alllink, bookName
 }
 
