@@ -17,4 +17,6 @@
 > 1. windows下中文名会乱码  
 > 2. 合并文件用的mergeFile一次性读取文件，耗内存   
 
+### gotunet
 
+tsinghua网络的登录和登出工具。主要是利用do_login.php和rad_user_info.php两个进行get和post请求。登出工具另写了tunetlogout。gotunet的password通过MD5加密。编译后双击即可运行，其中passwd.txt用来存放用户名和密码，用逗号隔开，与编译后的文件放在一起即可运行。
